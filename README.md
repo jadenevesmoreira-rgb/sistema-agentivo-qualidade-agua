@@ -240,4 +240,4 @@ Instituto Mineiro de Gestão das Águas (IGAM) — Programa Águas de Minas.
 Os dados utilizados são provenientes de fonte pública.
 
 ### Autoria
-Projeto desenvolvido por Jade Neves como parte do desafio técnico para a posição de Cientista de Dados da Amplo Engenharia.
+Projeto desenvolvido por Jade Neves.
