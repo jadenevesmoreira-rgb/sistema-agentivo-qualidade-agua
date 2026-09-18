@@ -1,0 +1,107 @@
+name: sistema-agentivo-qualidade-agua
+version: "1.0"
+
+domain:
+  name: "Monitoramento da qualidade das águas superficiais em Minas Gerais"
+  geographic_scope: "Minas Gerais, Brasil"
+
+problem:
+  description: >
+    Apoiar a análise exploratória e o controle de qualidade de dados
+    históricos de monitoramento da qualidade das águas.
+  decision_supported: >
+    Identificar parâmetros, períodos e observações que merecem
+    atenção ou investigação adicional antes de sua utilização
+    em análises ambientais.
+
+user:
+  profile: "Analista ambiental ou profissional responsável pela análise de dados de monitoramento"
+
+data:
+  source: "Programa Águas de Minas - IGAM"
+  demonstration_file: "Dados_Qualidade_das_Aguas_ate_2019.xlsx"
+  main_sheet: "SH ATÉ DEZ 2019"
+  format: "XLSX"
+  observation_unit: "Amostragem realizada em uma estação, data e hora específicas"
+  geographic_unit: "Estação de monitoramento"
+
+  temporal_fields:
+    - "Data de Amostragem"
+    - "Hora de Amostragem"
+
+  expected_structure:
+    required_identifiers:
+      - "Estação"
+      - "Data de Amostragem"
+      - "Hora de Amostragem"
+
+    parameter_structure:
+      description: >
+        A base pode apresentar parâmetros em colunas de valor e
+        respectivas colunas de sinal.
+      example:
+        value_column: "pH in loco"
+        signal_column: "Sinal pH in loco"
+
+outputs:
+  - "Relatório de qualidade dos dados"
+  - "Análise exploratória"
+  - "Achados validados"
+  - "Visualizações"
+  - "Registro da execução"
+
+analysis:
+  possible_tasks:
+    - "Profiling dos dados"
+    - "Controle de qualidade"
+    - "Análise de completude"
+    - "Análise de cobertura temporal"
+    - "Estatísticas descritivas"
+    - "Identificação de possíveis valores extremos"
+    - "Análise exploratória por estação, parâmetro e período"
+
+quality_control:
+  principles:
+    - "Preservar os dados originais"
+    - "Preservar valores ausentes"
+    - "Preservar os sinais associados às observações"
+    - "Não classificar automaticamente valores extremos como erros"
+    - "Registrar evidências das verificações"
+    - "Validar achados antes da geração do relatório"
+
+validation:
+  required_checks:
+    - "Estrutura mínima"
+    - "Duplicidades"
+    - "Completude"
+    - "Cobertura temporal"
+    - "Consistência"
+    - "Valores extremos"
+    - "Cobertura amostral"
+    - "Semântica"
+    - "Dados ausentes"
+
+out_of_scope:
+  - "Inferência causal"
+  - "Diagnóstico ambiental definitivo"
+  - "Determinação da causa de dados ausentes"
+  - "Avaliação de risco à saúde"
+  - "Determinação de conformidade regulatória"
+  - "Substituição da avaliação de especialista"
+  - "Previsão futura sem pergunta e dados adequados"
+
+risks:
+  - "Valores ausentes ou baixa cobertura"
+  - "Interpretação inadequada dos sinais das medições"
+  - "Valores extremos interpretados automaticamente como erros"
+  - "Viés de cobertura amostral"
+  - "Conclusões causais sem evidência suficiente"
+  - "Interpretação fora do escopo dos dados"
+
+completion_criteria:
+  - "Estrutura de entrada validada"
+  - "Controle de qualidade executado"
+  - "Análise concluída"
+  - "Achados validados"
+  - "Relatório gerado"
+  - "Execução registrada"
